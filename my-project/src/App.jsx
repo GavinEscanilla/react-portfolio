@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { useSelector, useDispatch } from "react-redux";
-import { increment, decrement } from "./store";
-import Nav from './components/Nav';
+import { NavLink, Outlet } from "react-router-dom";
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -9,12 +8,27 @@ import './App.css'
 function App() {
   
   
-  const count = useSelector(state => state.counter.value);
-  const dispatch = useDispatch();
+
 
   return (
-    <div className="App bg-gray-900 h-full w-full"> 
-<Nav />
+    <div className="App flex flex-col  h-full w-full"> 
+    <nav className="bg-red-700 ">
+      <ul className='flex h-20 justify-center items-center '>
+      <li className=''>
+        <NavLink to="/" className={({ isActive }) => "m-5 " + (isActive? "text-blue-800 font-bold" :" text-black hover:text-blue-800")}>
+        Home
+        </NavLink>
+      </li>
+      <li className=''>
+        <NavLink to="/about"  className={({ isActive }) => "m-5 " + (isActive? "text-blue-800 font-bold" :" text-black hover:text-blue-800")}>
+        About
+        </NavLink>
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <Outlet />
+      </main>
       </div>
   )
 }
