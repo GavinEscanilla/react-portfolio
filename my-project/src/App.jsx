@@ -12,8 +12,8 @@ function App() {
 
   return (
     <div className="App flex flex-col  h-full w-full"> 
-    <nav className="bg-red-700 ">
-      <ul className='flex h-20 justify-center items-center '>
+    <nav className="bg-gray-700 ">
+      <ul className='flex h-20 justify-end items-center '>
       <li className=''>
         <NavLink to="/" className={({ isActive }) => "m-5 " + (isActive? "text-blue-800 font-bold" :" text-black hover:text-blue-800")}>
         Home
